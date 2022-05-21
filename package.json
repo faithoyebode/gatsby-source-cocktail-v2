@@ -1,16 +1,24 @@
 {
-  "name": "gatsby-starter-plugin",
+  "name": "Cocktail Plugin",
   "version": "1.0.0",
   "description": "A minimal boilerplate for the essential files Gatsby looks for in a plugin",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "echo \"No build script setup\""
+    "start": "gatsby develop",
+    "build": "gatsby build",
+    "clean": "gatsby clean"
   },
   "keywords": [
     "gatsby",
     "gatsby-plugin"
   ],
-  "author": "Kyle Gill <kyle.robert.gill@gmail.com>",
-  "license": "0BSD"
+  "author": "Faith Oyebode <oyebodefaith3@gmail.com>",
+  "license": "0BSD",
+  "dependencies": {
+    "axios": "^0.27.2",
+    "gatsby": "^4.14.1",
+    "gatsby-plugin-sharp": "^4.14.1",
+    "gatsby-source-filesystem": "^4.14.0",
+    "gatsby-transformer-sharp": "^4.14.0"
+  }
 }
