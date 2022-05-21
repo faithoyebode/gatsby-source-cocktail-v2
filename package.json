@@ -15,10 +15,16 @@
   "author": "Faith Oyebode <oyebodefaith3@gmail.com>",
   "license": "0BSD",
   "dependencies": {
+    "@compiled/react": "^0.10.4",
     "axios": "^0.27.2",
     "gatsby": "^4.14.1",
+    "gatsby-plugin-image": "^2.14.1",
     "gatsby-plugin-sharp": "^4.14.1",
     "gatsby-source-filesystem": "^4.14.0",
     "gatsby-transformer-sharp": "^4.14.0"
+  },
+  "devDependencies": {
+    "@compiled/babel-plugin": "^0.15.0",
+    "babel-preset-gatsby": "^2.14.0"
   }
 }
