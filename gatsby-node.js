@@ -11,4 +11,17 @@
  *
  * See: https://www.gatsbyjs.com/docs/creating-a-local-plugin/#developing-a-local-plugin-that-is-outside-your-project
  */
-exports.onPreInit = () => console.log("Loaded gatsby-source-cocktai;")
+exports.onPreInit = () => console.log("Loaded gatsby-source-cocktail");
+
+
+const path = require(`path`)
+exports.createPages = ({ graphql, actions }) => {
+const { createPage } = actions
+const indexPageTemplate = path.resolve(`src/templates/index.js`)
+    createPage({
+    // Path for this page — required
+        path: "/",
+        component: indexPageTemplate,
+        context: {}
+    });
+}

@@ -13,12 +13,6 @@ exports.sourceNodes = async ({
     getNodesByType,
 }) => {
     const { createNode } = actions
-    // const data = {
-    // posts: [
-    // { id: 1, description: `My first post!` },
-    // { id: 2, description: `Post number two!` },
-    // ],
-    // }
     let data;
 
     try {
