@@ -42,9 +42,6 @@ exports.sourceNodes = async ({
         })}
     )
     return
-    // strDrink, - name
-    // strDrinkThumb - image
-    // idDrink -id
 }    
 
 

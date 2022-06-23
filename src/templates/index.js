@@ -59,7 +59,10 @@ const Index = (props) => {
                     height: "100%",                 
                     borderRadius: "16px"
                   }} 
-                  image={item.image.childImageSharp.gatsbyImageData} 
+                  image={item?.image?.childImageSharp?.gatsbyImageData ? 
+                      item.image.childImageSharp.gatsbyImageData : 
+                      item.image.publicURL
+                    } 
                 />
               </div>
               <p css={{
