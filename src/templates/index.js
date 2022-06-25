@@ -33,7 +33,7 @@ const Index = (props) => {
           gridTemplateColumns: "1fr 1fr 1fr 1fr",
           // gridTemplateRows: "500px",
           gridAutoFlow: "row dense",
-          gap: "40px 20px",
+          gap: "0 20px",
           "@media (max-width: 1200px)": {
             gridTemplateColumns: "1fr 1fr 1fr"
           },
@@ -46,13 +46,32 @@ const Index = (props) => {
 
         }}>
           {allCocktail.nodes.map((item, index) => (
-            <div key={index}>
+            <div 
+              key={index}
+              css={{
+                cursor: "pointer",
+                height: "500px",
+                marginBottom: "20px",
+                "&:hover": {
+                  background: "#fffff",
+                  borderRadius: "16px",
+                  boxShadow: "4px 5px 8px #00000020",
+                  "& .excerpt": {
+                    display: "block",
+                  }
+                }
+              }}
+            >
               <div css={{
                 width: "100%",
                 height: "400px",
                 position: "relative",
                 borderRadius: "16px",
-                boxShadow: "4px 5px 8px #00000020"
+                boxShadow: "4px 5px 8px #00000020",
+                "div:hover &": {
+                  boxShadow: "none"
+                }
+                
               }}>
                 <GatsbyImage css={{
                     width: "100%", 
@@ -71,10 +90,20 @@ const Index = (props) => {
                   fontWeight: 500,
                   marginLeft: "16px",
                   marginTop: "5px",
+                  marginBottom: 0,
                   fontFamily: "sans-serif"
                 }}
               >
                 {item.strDrink}
+              </p>
+              <p css={{
+                  marginTop: 0, 
+                  padding: "0 16px", 
+                  display: "none"
+                }} 
+                className="excerpt" 
+              >
+                {item.furtherInformationExcerpt}
               </p>
             </div>
           ))}
@@ -97,7 +126,7 @@ export const query = graphql`
             gatsbyImageData
           }
         }
-        furtherInformationHTML
+        furtherInformationExcerpt
       }
     }
   }
