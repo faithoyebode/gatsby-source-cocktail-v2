@@ -4,8 +4,8 @@ import { graphql } from "gatsby";
 import { GatsbyImage } from "gatsby-plugin-image";
 
 const Index = (props) => {
-  const { allDrink } = props.data
-
+  const { allCocktail } = props.data
+  console.log("allCocktail", allCocktail);
   return (
     <div css={{
         width: "100%",
@@ -45,7 +45,7 @@ const Index = (props) => {
           }
 
         }}>
-          {allDrink.nodes.map((item, index) => (
+          {allCocktail.nodes.map((item, index) => (
             <div key={index}>
               <div css={{
                 width: "100%",
@@ -86,7 +86,7 @@ const Index = (props) => {
 
 export const query = graphql`
   query HomePageQuery {
-    allDrink {
+    allCocktail {
       nodes {
         idDrink
         strDrink
@@ -97,6 +97,7 @@ export const query = graphql`
             gatsbyImageData
           }
         }
+        furtherInformationHTML
       }
     }
   }
