@@ -53,7 +53,7 @@ exports.sourceNodes = async ({
     }
 
     // Recurse through data and create Gatsby nodes.
-    data.drinks.slice(0, 50).forEach(async (drink) => {
+    data.drinks.forEach(async (drink) => {
         let furtherInformationHTML = "";
         const furtherInformation = await axios.get(encodeURI(`https://en.wikipedia.org/w/api.php?action=parse&section=0&prop=text&format=json&page=${drink.strDrink.toLowerCase()}`));
         furtherInformationHTML = furtherInformation?.data?.parse?.text['*'] ? furtherInformation.data.parse.text['*'] : "";

@@ -1,7 +1,8 @@
 /** @jsxImportSource @compiled/react */
 import React from 'react';
-import { graphql } from "gatsby";
+import { graphql, Link } from "gatsby";
 import { GatsbyImage } from "gatsby-plugin-image";
+import slugify from 'slugify';
 
 const Index = (props) => {
   const { allCocktail } = props.data
@@ -46,11 +47,17 @@ const Index = (props) => {
 
         }}>
           {allCocktail.nodes.map((item, index) => (
+            <Link
+              to={item.furtherInformationExcerpt ? `/drink/${slugify(item.strDrink.toLowerCase())}` : "/"}
+              css={{
+                textDecoration: "none"
+              }}
+            >
             <div 
               key={index}
               css={{
                 cursor: "pointer",
-                height: "500px",
+                height: "550px",
                 marginBottom: "20px",
                 "&:hover": {
                   background: "#fffff",
@@ -91,7 +98,8 @@ const Index = (props) => {
                   marginLeft: "16px",
                   marginTop: "5px",
                   marginBottom: 0,
-                  fontFamily: "sans-serif"
+                  fontFamily: "sans-serif",
+                  color: "black",
                 }}
               >
                 {item.strDrink}
@@ -99,13 +107,15 @@ const Index = (props) => {
               <p css={{
                   marginTop: 0, 
                   padding: "0 16px", 
-                  display: "none"
+                  display: "none",
+                  color: "#00000090",
                 }} 
                 className="excerpt" 
               >
-                {item.furtherInformationExcerpt}
+                {item.furtherInformationExcerpt ? `${item.furtherInformationExcerpt} READ MORE` : ""}
               </p>
             </div>
+            </Link>
           ))}
         </div>
       </div>
